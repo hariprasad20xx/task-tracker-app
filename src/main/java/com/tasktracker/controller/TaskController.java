@@ -7,6 +7,7 @@ import com.tasktracker.domain.entity.Task;
 import com.tasktracker.mapper.TaskMapper;
 import com.tasktracker.service.TaskService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,4 +26,11 @@ public class TaskController {
         this.taskMapper = taskMapper;
     }
 
+    @PostMapping
+    public ResponseEntity<TaskDto> createTask(@Valid @RequestBody CreateTaskRequestDto createTaskRequestDto) {
+        CreateTaskRequest createTaskRequest = taskMapper.fromDto(createTaskRequestDto);
+        Task task = taskService.createTask(createTaskRequest);
+        TaskDto createdTaskDto = taskMapper.toDto(task);
+        return new ResponseEntity<>(createdTaskDto, HttpStatus.CREATED);
+    }
 }
