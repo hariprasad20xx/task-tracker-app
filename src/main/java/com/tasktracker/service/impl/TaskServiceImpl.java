@@ -1,6 +1,6 @@
 package com.tasktracker.service.impl;
 
-import com.tasktracker.domain.CreateTaksRequest;
+import com.tasktracker.domain.CreateTaskRequest;
 import com.tasktracker.domain.entity.Task;
 import com.tasktracker.domain.entity.TaskStatus;
 import com.tasktracker.repository.TaskRepository;
@@ -19,7 +19,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task createTask(CreateTaksRequest request) {
+    public Task createTask(CreateTaskRequest request) {
         Instant now = Instant.now();
 
         Task task = new Task(

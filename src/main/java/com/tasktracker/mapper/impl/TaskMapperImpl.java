@@ -1,6 +1,6 @@
 package com.tasktracker.mapper.impl;
 
-import com.tasktracker.domain.CreateTaksRequest;
+import com.tasktracker.domain.CreateTaskRequest;
 import com.tasktracker.domain.dto.CreateTaskRequestDto;
 import com.tasktracker.domain.dto.TaskDto;
 import com.tasktracker.domain.entity.Task;
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 public class TaskMapperImpl implements TaskMapper {
 
     @Override
-    public CreateTaksRequest fromDto(CreateTaskRequestDto dto) {
-        return new CreateTaksRequest(
+    public CreateTaskRequest fromDto(CreateTaskRequestDto dto) {
+        return new CreateTaskRequest(
                 dto.title(),
                 dto.description(),
                 dto.dueDate(),
