@@ -4,7 +4,7 @@ import com.tasktracker.domain.entity.TaskPriority;
 
 import java.time.LocalDate;
 
-public record CreateTaksRequest(
+public record CreateTaskRequest(
         String title,
         String description,
         LocalDate dueDate,
