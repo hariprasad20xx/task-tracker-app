@@ -78,7 +78,7 @@ src/main/java
     │   └── impl
     ├── domain
     │   ├── entity
-    │   ├── dto
+    │   └──  dto
     └── exception
 ```
 
